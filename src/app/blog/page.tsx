@@ -2,22 +2,12 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 
 export default async function Page() {
-  const posts = [
-    {
-      id: 1,
-      title: "Hello World",
-    },
-    {
-      id: 2,
-      title: "Hi World",
-    },
-  ];
+  const data = await fetch("https://api.vercel.app/blog");
+  const posts = await data.json();
   return (
-    <ul className={styles.blog}>
-      {posts.map((post) => (
-        <li key={post.id}>
-          <Link href={`/blog/${post.id}`}>{post.title}</Link>
-        </li>
+    <ul>
+      {posts.map((post: any) => (
+        <li key={post.id}>{post.title}</li>
       ))}
     </ul>
   );
