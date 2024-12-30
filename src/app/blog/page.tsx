@@ -1,14 +1,13 @@
-import Link from "next/link";
-import styles from "./styles.module.css";
+import Posts from "@/app/ui/posts";
+import { Suspense } from "react";
 
-export default async function Page() {
-  const data = await fetch("https://api.vercel.app/blog");
-  const posts = await data.json();
+export default function Page() {
+  // Don't await the data fetching function
+  // const posts = getPosts();
+
   return (
-    <ul>
-      {posts.map((post: any) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </ul>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Posts />
+    </Suspense>
   );
 }
