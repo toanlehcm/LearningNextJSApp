@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./styles.module.css";
 
 export default async function Page() {
   const posts = [
@@ -12,7 +13,7 @@ export default async function Page() {
     },
   ];
   return (
-    <ul>
+    <ul className={styles.blog}>
       {posts.map((post) => (
         <li key={post.id}>
           <Link href={`/blog/${post.id}`}>{post.title}</Link>
