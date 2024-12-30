@@ -21,6 +21,7 @@ export default function Home() {
           <a href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app" target="_blank" rel="noopener noreferrer" className={styles.secondary}>
             Read our docs
           </a>
+          <Image src="" alt="Picture of the author" width={500} height={500} />
         </div>
       </main>
       <footer className={styles.footer}>
