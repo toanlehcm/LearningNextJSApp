@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Globals */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+main {
+  padding: 20px;
+  min-height: calc(100vh - 150px); /* Adjust for header and footer height */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.header__dropdown select {
+  padding: 5px;
+}
+
+.header__search input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.header__icons button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Menu Styles */
+.menu {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu__logo {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.menu__items {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__items li {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 10px 20px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}

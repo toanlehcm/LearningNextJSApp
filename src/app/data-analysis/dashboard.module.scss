@@ -1,0 +1,17 @@
+/* styles/dashboard.module.css */
+.dashboard {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+}
+
+.card-content {
+  height: 300px;
+}
