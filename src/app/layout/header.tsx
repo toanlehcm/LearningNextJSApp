@@ -1,3 +1,5 @@
+import LocaleSwitcher from './LocaleSwitcher'
+
 export default function Header() {
   return (
     <header className='header'>
@@ -17,10 +19,10 @@ export default function Header() {
         <input type='text' placeholder='Search by household code' />
         <button>🔍</button>
       </div>
-      <div className='header__icons'>
+      <div className='header__icons' style={{ display: 'flex' }}>
         <button>🔔</button>
         <button>👤</button>
-        <button>🇬🇧 EN</button>
+        <LocaleSwitcher />
       </div>
     </header>
   )

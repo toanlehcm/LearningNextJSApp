@@ -8,6 +8,8 @@ import Header from './layout/header'
 import Menu from './layout/menu'
 import Footer from './layout/footer'
 import AppQueryProvider from '@/libs/query-provider'
+import { NextIntlClientProvider } from 'next-intl'
+import { getLocale, getMessages } from 'next-intl/server'
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -16,18 +18,25 @@ const roboto = Roboto({
   variable: '--font-roboto'
 })
 
-export default function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale()
+  console.log(locale)
+
+  // Providing all messages to the client
+  const messages = await getMessages()
+
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={roboto.variable}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <AppQueryProvider>
-              <Header />
-              <Menu />
-              <main>{children}</main>
-              <Footer />
+              <NextIntlClientProvider messages={messages}>
+                <Header />
+                <Menu />
+                <main>{children}</main>
+                <Footer />
+              </NextIntlClientProvider>
             </AppQueryProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
