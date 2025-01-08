@@ -19,7 +19,7 @@ const roboto = Roboto({
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = await getLocale()
+  const locale = (await getLocale()) || 'en'
   console.log(locale)
 
   // Providing all messages to the client

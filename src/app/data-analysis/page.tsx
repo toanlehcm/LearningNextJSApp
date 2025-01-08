@@ -1,5 +1,6 @@
+'use client'
 import { Suspense } from 'react'
-import Dashboard from './components/Dashboard'
+import Widget from './Widget/page'
 
 // async function fetchData(dashboardId: string) {
 //   const res = await fetch(`https://api.example.com/dashboard/${dashboardId}`)
@@ -11,10 +12,8 @@ export default async function DataAnalysisPage({ params }: { params: { dashboard
   // const data = await fetchData(params.dashboardId)
 
   return (
-    <main>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Dashboard data={[]} dashboardId={params.dashboardId} />
-      </Suspense>
-    </main>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Widget />
+    </Suspense>
   )
 }
