@@ -1,4 +1,9 @@
 {
+  "LocaleSwitcher": {
+    "en": "English",
+    "vi": "Vietnamese",
+    "label": "Language"
+  },
   "HomePage": {
     "title": "Hello world!"
   }

@@ -1,26 +1,25 @@
+// 'use client'
 import { Box, Typography, IconButton } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import OpenWithIcon from '@mui/icons-material/OpenWith'
 import Chart from './Chart'
+import { useState } from 'react'
 
-const data = [
-  { date: 'Dec 23', value: 250 },
-  { date: 'Jan 24', value: 500 },
-  { date: 'Feb 24', value: 1000 },
-  { date: 'Mar 24', value: 400 },
-  { date: 'Apr 24', value: 600 },
-  { date: 'May 24', value: 500 },
-  { date: 'Jun 24', value: 750 },
-  { date: 'Jul 24', value: 300 },
-  { date: 'Aug 24', value: 800 },
-  { date: 'Sep 24', value: 400 },
-  { date: 'Oct 24', value: 900 },
-  { date: 'Nov 24', value: 1000 }
-]
+interface IWidgetProps {
+  data: { date: string; value: number }[]
+  title: string
+  description?: string
+}
 
-export default function Widget() {
+export default function Widget({
+  data = [],
+  title = '',
+  description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.'
+}: IWidgetProps) {
+  const [dragMode, setDragMode] = useState(false)
+
   return (
     <Box
       sx={{
@@ -35,15 +34,15 @@ export default function Widget() {
       {/* Title Section */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-          Consumption
+          {title}
         </Typography>
 
-        <IconButton>
+        <IconButton onClick={() => setDragMode(!dragMode)}>
           <MoreVertIcon />
         </IconButton>
       </Box>
       <Typography variant='body2' color='textSecondary' sx={{ marginBottom: '16px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.
+        {description}
       </Typography>
 
       {/* Chart Section */}

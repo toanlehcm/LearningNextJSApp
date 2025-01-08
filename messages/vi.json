@@ -1,4 +1,9 @@
 {
+  "LocaleSwitcher": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt",
+    "label": "Ngôn ngữ"
+  },
   "HomePage": {
     "title": "Xin chào!"
   }
