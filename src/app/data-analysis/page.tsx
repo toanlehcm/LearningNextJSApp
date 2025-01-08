@@ -1,6 +1,5 @@
-// import Dashboard from "./components/Dashboard"
-import Dashboard from '@/app/data-analysis/[dashboardId]/components/Dashboard'
 import { Suspense } from 'react'
+import Dashboard from './components/Dashboard'
 
 // async function fetchData(dashboardId: string) {
 //   const res = await fetch(`https://api.example.com/dashboard/${dashboardId}`)

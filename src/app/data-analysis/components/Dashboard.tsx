@@ -11,13 +11,16 @@ export default function Dashboard({ data, dashboardId }: { data: any[]; dashboar
   return (
     <div className='dashboard'>
       <h1>{`Dashboard ${dashboardId}`}</h1>
+
       <div className='dashboard-widgets'>
-        <Card title='Consumption'>
+        {/* <Card title='Consumption'>
           <Chart data={mockData} />
-        </Card>
-        <Card title='Revenue Comparison'>
+        </Card> */}
+
+        {/* <Card title='Revenue Comparison'>
           <Chart data={mockData} />
-        </Card>
+        </Card> */}
+
         {/* Add more widgets dynamically */}
       </div>
     </div>
