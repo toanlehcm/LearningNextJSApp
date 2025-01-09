@@ -13,11 +13,7 @@ interface IWidgetProps {
   description?: string
 }
 
-export default function Widget({
-  data = [],
-  title = '',
-  description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.'
-}: IWidgetProps) {
+export default function Widget({ data = [], title = '', description = '' }: IWidgetProps) {
   const [dragMode, setDragMode] = useState(false)
 
   return (
@@ -28,18 +24,48 @@ export default function Widget({
         padding: '16px',
         backgroundColor: '#fff',
         position: 'relative',
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)'
+        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+        overflow: 'hidden', // Ensure no overflow
+        clipPath: 'polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%)' // Missing top-right corner
       }}
     >
+      {/* MoreVertIcon positioned outside the cut-out */}
+      <IconButton
+        onClick={() => setDragMode(!dragMode)}
+        sx={{
+          position: 'absolute',
+          top: -8,
+          right: -8,
+          backgroundColor: '#E5E7EB',
+          '&:hover': { backgroundColor: '#D1D5DB' },
+          padding: '8px',
+          borderRadius: '50%',
+          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)'
+        }}
+      >
+        <MoreVertIcon sx={{ color: '#4B5563' }} />
+      </IconButton>
+
       {/* Title Section */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
           {title}
         </Typography>
 
-        <IconButton onClick={() => setDragMode(!dragMode)}>
+        {/* <IconButton
+          sx={{
+            position: 'absolute',
+            top: -8,
+            right: -8,
+            backgroundColor: '#E5E7EB',
+            '&:hover': { backgroundColor: '#D1D5DB' },
+            padding: '8px',
+            borderRadius: '50%',
+            boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)'
+          }}
+        >
           <MoreVertIcon />
-        </IconButton>
+        </IconButton> */}
       </Box>
       <Typography variant='body2' color='textSecondary' sx={{ marginBottom: '16px' }}>
         {description}
@@ -58,6 +84,7 @@ export default function Widget({
             backgroundColor: '#f0f0f0',
             '&:hover': { backgroundColor: '#e0e0e0' }
           }}
+          onClick={() => setDragMode(!dragMode)}
         >
           <OpenWithIcon fontSize='small' />
         </IconButton>
