@@ -1,0 +1,4 @@
+.box_wrapper {
+  --mask: radial-gradient(56px at 100% 0, #0000 98%, #000);
+  mask: var(--mask);
+}

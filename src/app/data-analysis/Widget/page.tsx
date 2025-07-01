@@ -6,6 +6,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import OpenWithIcon from '@mui/icons-material/OpenWith'
 import Chart from './Chart'
 import { useState } from 'react'
+import styles from './widget.module.scss'
 
 interface IWidgetProps {
   data: { date: string; value: number }[]
@@ -18,6 +19,7 @@ export default function Widget({ data = [], title = '', description = '' }: IWid
 
   return (
     <Box
+      className={styles.box_wrapper}
       sx={{
         border: '1px solid #E0E0E0',
         borderRadius: '12px',
@@ -25,8 +27,8 @@ export default function Widget({ data = [], title = '', description = '' }: IWid
         backgroundColor: '#fff',
         position: 'relative',
         boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-        overflow: 'hidden', // Ensure no overflow
-        clipPath: 'polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%)' // Missing top-right corner
+        overflow: 'hidden' // Ensure no overflow
+        // clipPath: 'polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%)' // Missing top-right corner
       }}
     >
       {/* MoreVertIcon positioned outside the cut-out */}
