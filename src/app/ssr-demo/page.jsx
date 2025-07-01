@@ -13,9 +13,9 @@ async function fetchUserDataOnServer() {
   console.log("[SSR - App Router] Bắt đầu tải dữ liệu trên Server...");
 
   try {
-    // Giả lập thời gian tải dữ liệu từ API trên server (ví dụ: 2 giây)
+    // Giả lập thời gian tải dữ liệu từ API trên server (ví dụ: 5 giây)
     // Thời gian này sẽ ảnh hưởng đến TTFB (Time To First Byte)
-    await new Promise((resolve) => setTimeout(resolve, 10000));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
 
     // Gọi API để lấy dữ liệu người dùng
     // Trong môi trường server, bạn có thể gọi API nội bộ hoặc API bên ngoài.

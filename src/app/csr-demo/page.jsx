@@ -25,8 +25,8 @@ function CsrDemoPage() {
     // Hàm fetch dữ liệu bất đồng bộ
     const fetchUserData = async () => {
       try {
-        // Giả lập thời gian tải dữ liệu từ API (ví dụ: 2 giây)
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        // Giả lập thời gian tải dữ liệu từ API (ví dụ: 5 giây)
+        await new Promise((resolve) => setTimeout(resolve, 5000));
 
         // Giả lập một API endpoint trả về dữ liệu người dùng
         // Trong thực tế, bạn sẽ thay thế bằng fetch('/api/your-endpoint')
