@@ -12,7 +12,7 @@ function CsrDemoPage() {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  console.log("[CSR - App Router");
   /**
    * 2. Sử dụng useEffect để thực hiện tác vụ fetch dữ liệu.
    * Với dependency array rỗng ([]), useEffect sẽ chỉ chạy một lần
