@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Geostar, Roboto } from "next/font/google";
+import { Inter as FontSans, Geist, Geist_Mono, Geostar, Roboto } from "next/font/google";
 import "./globals.css";
 import StyledJsxRegistry from "./registry";
+import { cn } from "@/utils/cn";
+
+const inter = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn(inter.variable, 'antialiased')}>
       <body className={`${geistSans.variable} ${geistMono.variable} ${geostar.variable} ${roboto.className}`}>
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
