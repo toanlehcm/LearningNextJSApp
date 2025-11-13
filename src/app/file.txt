@@ -1,2 +1,4 @@
 Hello world.
 Dev update 1
+Feature A - step 1
+Feature A - step 2
