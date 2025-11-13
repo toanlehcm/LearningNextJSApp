@@ -1,9 +1,5 @@
 hello world
 Dev-rebase update 1
-<<<<<<< HEAD
 Dev-rebase update 2
 Feature A - step 1
-=======
-Feature A - step 1
 Feature A - step 2
->>>>>>> 1f3dadf (feat: Feature A - step 2)
