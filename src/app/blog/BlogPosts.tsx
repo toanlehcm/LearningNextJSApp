@@ -15,7 +15,7 @@ async function fetchPosts(): Promise<Post[]> {
   ];
 }
 
-export default function Posts() {
+export default function BlogPosts() {
   const postsList = use(fetchPosts()); // Suspends the component until the promise resolves
 
   return (
