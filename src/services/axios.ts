@@ -11,11 +11,11 @@ const axiosInstance = axios.create({
 // ================================
 axiosInstance.interceptors.request.use(
   (config) => {
-    useLoadingStore.getState().increase(); // Show loading.
+    // useLoadingStore.getState().increase(); // Show loading.
     return config;
   },
   (error) => {
-    useLoadingStore.getState().decrease();
+    // useLoadingStore.getState().decrease();
     return Promise.reject(error);
   }
 );
@@ -25,11 +25,11 @@ axiosInstance.interceptors.request.use(
 // ================================
 axiosInstance.interceptors.response.use(
   (response) => {
-    useLoadingStore.getState().decrease(); // Hide loading.
+    // useLoadingStore.getState().decrease(); // Hide loading.
     return response;
   },
   (error) => {
-    useLoadingStore.getState().decrease();
+    // useLoadingStore.getState().decrease();
     return Promise.reject(error);
   }
 );

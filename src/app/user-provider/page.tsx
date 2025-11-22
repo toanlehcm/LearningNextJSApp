@@ -4,6 +4,7 @@ import React from "react";
 
 export default function UserProviderPage() {
   const { data: dataListProvider } = useGetListUsers();
+  // const { data: dataListProvider } = useGetListUsers({ isShowLoading: false });
 
   return (
     <div className="flex flex-col gap-2">

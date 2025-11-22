@@ -5,6 +5,7 @@ interface LoadingState {
   isLoading: boolean;
   increase: () => void;
   decrease: () => void;
+  setLoading: (loading: boolean) => void;
 }
 
 export const useLoadingStore = create<LoadingState>((set) => ({
@@ -25,4 +26,9 @@ export const useLoadingStore = create<LoadingState>((set) => ({
         isLoading: newCount > 0,
       };
     }),
+
+  setLoading: (loading: boolean) =>
+    set(() => ({
+      isLoading: loading,
+    })),
 }));

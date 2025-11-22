@@ -4,6 +4,7 @@ import { useLoadingStore } from "@/stores/useLoadingStore";
 
 export default function GlobalLoading() {
   const isLoading = useLoadingStore((state) => state.isLoading);
+  console.log("isLoading", isLoading);
 
   if (!isLoading) return null;
 
