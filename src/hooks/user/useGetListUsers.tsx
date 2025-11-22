@@ -1,22 +1,16 @@
 "use client";
 import { getListUsers } from "@/services/user.services";
 import { TypeListUsers } from "@/type";
-import { useQuery } from "@tanstack/react-query";
+import { useGlobalLoadingQuery, GlobalLoadingQueryOptions } from "@/hooks/useGlobalLoadingQuery";
 
-interface UseGetListUsersOptions {
-  isShowLoading?: boolean;
-}
+type UseGetListUsersOptions = Omit<GlobalLoadingQueryOptions<TypeListUsers>, "queryKey" | "queryFn">;
 
-export function useGetListUsers(options?: UseGetListUsersOptions): ReturnType<typeof useQuery<TypeListUsers>> {
-  const { isShowLoading = true } = options || {};
-
-  return useQuery<TypeListUsers>({
+export function useGetListUsers(options?: UseGetListUsersOptions) {
+  return useGlobalLoadingQuery<TypeListUsers>({
     queryKey: ["get-list-user"],
     queryFn: getListUsers,
     staleTime: 5 * 60 * 1000, // Cache 5m for performance.
     refetchOnWindowFocus: false, // Do not refetch when window is focused.
-    meta: {
-      isShowLoading, // Thêm meta để QueryLoadingIndicator biết có cần show loading không
-    },
+    ...options, // Spread options để hỗ trợ isShowLoading và các options khác
   });
 }
