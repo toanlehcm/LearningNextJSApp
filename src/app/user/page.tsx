@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { getUsers } from "@/services/user.services";
+import { getListUsers } from "@/services/user.services";
 import { TypeListUsers } from "@/type";
 
 export default function UserPage() {
@@ -8,7 +8,7 @@ export default function UserPage() {
 
   useEffect(() => {
     const load = async () => {
-      const listUsers = await getUsers();
+      const listUsers = await getListUsers();
       setUsers(listUsers);
     };
 

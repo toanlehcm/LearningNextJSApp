@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { getPosts } from "@/services/post.services";
-import { getUsers } from "@/services/user.services";
+import { getListUsers } from "@/services/user.services";
 import { TypeListUsers } from "@/type";
 import { TypeListPosts } from "@/type/post.type";
 
@@ -15,7 +15,7 @@ export default function UserPostPage() {
   }, []);
 
   const getListUser = async () => {
-    const listUsers = await getUsers();
+    const listUsers = await getListUsers();
     setUsers(listUsers);
   };
 

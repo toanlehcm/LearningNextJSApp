@@ -6,6 +6,7 @@ export default function Home() {
       <Link href="/user">User</Link>
       <Link href="/post">Post</Link>
       <Link href="/user-post">User&Post</Link>
+      <Link href="/user-provider">User Provider</Link>
       <Link href="/blog">Blog</Link>
     </div>
   );

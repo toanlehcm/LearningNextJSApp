@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Geostar, Roboto } from "next/font/google";
 import "./globals.css";
 import StyledJsxRegistry from "./registry";
 import GlobalLoading from "@/components/GlobalLoading";
+import { Providers } from "@/providers/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,8 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${geostar.variable} ${roboto.className}`}>
-        <GlobalLoading />
-        <StyledJsxRegistry>{children}</StyledJsxRegistry>
+        <Providers>
+          <GlobalLoading />
+          <StyledJsxRegistry>{children}</StyledJsxRegistry>
+        </Providers>
       </body>
     </html>
   );

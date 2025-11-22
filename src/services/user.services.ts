@@ -1,7 +1,7 @@
 import axios from "./axios";
 import { TypeListUsers, IUser } from "@/type";
 
-export const getUsers = async (): Promise<TypeListUsers> => {
+export const getListUsers = async (): Promise<TypeListUsers> => {
   const { data } = await axios.get<TypeListUsers>("/users");
   return data;
 };

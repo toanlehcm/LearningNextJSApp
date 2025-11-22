@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.9",
+    "@tanstack/react-query-devtools": "^5.91.0",
     "axios": "^1.13.2",
     "next": "15.1.2",
     "react": "^19.0.0",
